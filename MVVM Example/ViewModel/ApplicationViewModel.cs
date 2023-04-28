@@ -11,7 +11,7 @@ namespace MVVM_Example.ViewModel
     public class ApplicationViewModel : INotifyPropertyChanged
     {
 
-        private Phone selectedPhone;
+        /*private Phone selectedPhone;
 
         private int selectedPhoneIndex;
 
@@ -185,11 +185,11 @@ namespace MVVM_Example.ViewModel
             this._fileService = fileService;
             
             //Default data
-            Phones = new ObservableCollection<Phone>
+            Phones = new ObservableCollection<Medicament>
             {
-                new Phone {Title = "iPhone 101", Company = "Apple", Price = 100000},
-                new Phone {Title = "Galaxy S100500 Edge", Company = "Samsung", Price = 110000},
-                new Phone {Title = "Mi42S", Company = "Xiaomi", Price = 70000}
+                new Medicament {Title = "medicament1", Company = "Apple", Price = 100000},
+                new Medicament {Title = "Galaxy S100500 Edge", Company = "Samsung", Price = 110000},
+                new Medicament {Title = "Mi42S", Company = "Xiaomi", Price = 70000}
             };
         }
         
@@ -200,6 +200,7 @@ namespace MVVM_Example.ViewModel
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
-        }
+        }*/
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

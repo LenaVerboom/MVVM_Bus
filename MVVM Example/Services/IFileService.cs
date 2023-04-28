@@ -5,7 +5,7 @@ namespace MVVM_Example.ViewModel
 {
     public interface IFileService
     {
-        List<Phone> Open(string fileName);
+        /*List<Phone> Open(string fileName);
         void Save(string fileName, List<Phone> phoneList);
-    }
+    */}
 }

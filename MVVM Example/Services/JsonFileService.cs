@@ -6,7 +6,7 @@ using MVVM_Example.Model;
 namespace MVVM_Example.ViewModel
 {
     public class JsonFileService : IFileService
-    {
+    {/*
         public List<Phone> Open(string fileName)
         {
             List<Phone> phones = new List<Phone>();
@@ -27,5 +27,5 @@ namespace MVVM_Example.ViewModel
                 jsonFormatter.WriteObject(fs, phoneList);
             }
         }
-    }
+  */  }
 }

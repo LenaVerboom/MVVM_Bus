@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MVVM_Example"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="500" Width="800">
     <Window.Resources>
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="14"/>
@@ -52,26 +52,10 @@
             </ListBox.ItemTemplate>
         </ListBox>
         
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            <Button Command="{Binding AddCommand}">+</Button>
-            <Button Command="{Binding RemoveCommand}" CommandParameter="{Binding SelectedPhone}">-</Button>
-            <Button Content="2x">
-                <i:Interaction.Triggers>
-                    <i:EventTrigger EventName="MouseDoubleClick">
-                        <i:InvokeCommandAction Command="{Binding DoubleCommand}" CommandParameter="{Binding SelectedPhone}"/>
-                    </i:EventTrigger>
-                </i:Interaction.Triggers>
-            </Button>
-        </StackPanel>
-        
+        <StackPanel Grid.Row="2" Orientation="Horizontal"/>
+
         <StackPanel Grid.Row="1" Grid.Column="1" DataContext="{Binding SelectedPhone}">
             <TextBlock Text="Selected element"/>
-            <TextBlock Text="Model"/>
-            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock Text="Manufacturer"/>
-            <TextBox Text="{Binding Company, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBlock Text="Price"/>
-            <TextBox Text="{Binding Price, UpdateSourceTrigger=PropertyChanged}"/>
         </StackPanel>
     </Grid>
 </Window>
