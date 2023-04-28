@@ -11,14 +11,47 @@
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Content="Click Me" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
             <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Name="Message"/>
+            <Label Content="Id" HorizontalAlignment="Left" VerticalAlignment="Center" Name="Id"/>
+            <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir un Id" VerticalAlignment="Center" Width="120" Name="txtId"/>
+
             <Label Content="Nom médicament" HorizontalAlignment="Left" VerticalAlignment="Center" Name="NomMedicament"/>
+                       
             <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir un médicament" VerticalAlignment="Center" Width="120" Name="txtNom"/>
             <Label Content="Description médicament" HorizontalAlignment="Left" VerticalAlignment="Center" Name="DescriptionMedicament"/>
             <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir une description" VerticalAlignment="Center" Width="120" Name="txtDesc"/>
             <Button Content="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_1" />
-            
+            <Button Content="Update" HorizontalAlignment="Center" VerticalAlignment="Center" Name="update" />
+            <Button Content="Charger la liste" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_2"  />
+            <DataGrid ItemsSource="{Binding}"
+                      Name="MedicamentList" 
+                      xmlns:m="http://schemas.microsoft/wpf/2008/toolkit"
+                        AutoGenerateColumns="False" Grid.Row="1" Grid.RowSpan="2" Width="339"
+                      >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Path=MedocId}"/>
+                    <DataGridTextColumn Header="Nom du medicament" Binding="{Binding Path=Name}"/>
+                    <DataGridTextColumn Header="Description" Binding="{Binding Path=Description}"/>
+                    <DataGridTemplateColumn Header="Modifier">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="BtnUpdateMedicament"> Modifier</Button>
+                            </DataTemplate>
+
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Header="Supprimer">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button>Supprimer</Button>
+                            </DataTemplate>
+
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
         </StackPanel>
         
+
 
 
     </Grid>

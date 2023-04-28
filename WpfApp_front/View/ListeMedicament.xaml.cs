@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApp_front.Model;
+using Newtonsoft.Json;
+
 
 namespace WpfApp_front.View
 {
@@ -41,6 +44,8 @@ namespace WpfApp_front.View
                 Message.Content = "Server error";
             }
         }
+
+
 
         private async void Button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -73,5 +78,52 @@ namespace WpfApp_front.View
                 MessageBox.Show(this, message, "Message", MessageBoxButton.OK);
             }
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+           
+            this.GetMedicaments();
+        }
+
+        private async void GetMedicaments()
+        {
+            var response = await client.GetStringAsync("https://localhost:7020/api/Medicament/GetAll");
+            var medicaments = JsonConvert.DeserializeObject<List<Medicament>>(response);
+            MedicamentList.DataContext = medicaments;
+
+        }
+
+        private void update_Click(object sender, RoutedEventArgs e)
+        {
+            var Medicament = new Medicament()
+            {
+                MedocId = Convert.ToInt32(txtId.Text),
+                Name = txtNom.Text,
+                Description = txtDesc.Text,
+            };
+            string message = string.Empty;
+            this.UpdateMedoc(Medicament);
+        }
+
+        private async void UpdateMedoc(Medicament medoc)
+        {
+            await client.PutAsJsonAsync("https://localhost:7020/api/Medicament/"+medoc.MedocId, medoc);
+        }
+
+        private async void DeleteMedoc(int medocId)
+        {
+            await client.DeleteAsync("https://localhost:7020/api/Medicament/" + medocId);
+        }
+
+
+        private void BtnUpdateMedicament(object sender, RoutedEventArgs e)
+        {
+            Medicament medicament = ((FrameworkElement)sender).DataContext as Medicament;
+            txtId.Text = medicament.MedocId.ToString();
+            txtNom.Text = medicament.Name;
+            txtDesc.Text = medicament.Description;  
+            this.UpdateMedoc(medicament);
+        }
+
     }
 }

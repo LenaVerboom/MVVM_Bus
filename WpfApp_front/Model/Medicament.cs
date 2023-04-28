@@ -8,7 +8,7 @@ namespace WpfApp_front.Model
 {
     class Medicament
     {
-        public int ID { get; set; }
+        public int MedocId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
     }
