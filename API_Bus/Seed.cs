@@ -16,11 +16,13 @@ namespace API_Bus
             var Medicaments = new List<Medicament> {
             new Medicament()
             {
-                Name = "Test"
+                Name = "Test",
+                Description = "double test"
             },
             new Medicament()
             {
-                Name = "Test2"
+                Name = "Test2",
+                Description = "double test2"
             },
             };
 

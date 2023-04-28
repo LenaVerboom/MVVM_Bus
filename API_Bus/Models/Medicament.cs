@@ -10,6 +10,8 @@ namespace API_Bus.Models
         public int MedocId { get; set; }
         public string Name { get; set; }
 
+        public string Description { get; set; }
+
 
 
     }

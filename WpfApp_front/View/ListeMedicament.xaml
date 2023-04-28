@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfApp_front.View.ListeMedicalement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp_front.View"
+        mc:Ignorable="d"
+         Title="MainWindow" Height="600" Width="900" Background="Gray">
+    <Grid>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Click Me" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+            <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Name="Message"/>
+            <Label Content="Nom médicament" HorizontalAlignment="Left" VerticalAlignment="Center" Name="NomMedicament"/>
+            <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir un médicament" VerticalAlignment="Center" Width="120" Name="txtNom"/>
+            <Label Content="Description médicament" HorizontalAlignment="Left" VerticalAlignment="Center" Name="DescriptionMedicament"/>
+            <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir une description" VerticalAlignment="Center" Width="120" Name="txtDesc"/>
+            <Button Content="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_1" />
+            
+        </StackPanel>
+        
+
+
+    </Grid>
+</Window>
