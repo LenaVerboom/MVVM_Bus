@@ -109,8 +109,7 @@ namespace WpfApp_front.View
             Medicament medicament = ((FrameworkElement)sender).DataContext as Medicament;
             txtId.Text = medicament.MedocId.ToString();
             txtNom.Text = medicament.Name;
-            txtDesc.Text = medicament.Description;
-            MessageBox.Show(this, "Modifié", "Message", MessageBoxButton.OK);
+            txtDesc.Text = medicament.Description;  
             this.UpdateMedoc(medicament);
         }
 
@@ -121,6 +120,13 @@ namespace WpfApp_front.View
             MessageBox.Show(this, "Supprimé", "Message", MessageBoxButton.OK);
             this.GetMedicaments();
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window2 w2 = new Window2();
+            w2.Show();
+            this.Hide();
         }
     }
 }

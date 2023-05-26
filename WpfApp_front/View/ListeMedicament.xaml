@@ -9,18 +9,18 @@
     <Grid>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-           
+
             <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Name="Message"/>
             <Label Content="Id" HorizontalAlignment="Left" VerticalAlignment="Center" Name="Id" Visibility="Hidden"/>
             <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir un Id" VerticalAlignment="Center" Width="120" Name="txtId" Visibility="Hidden"/>
 
             <Label Content="Nom médicament" HorizontalAlignment="Left" VerticalAlignment="Center" Name="NomMedicament"/>
-                       
+
             <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir un médicament" VerticalAlignment="Center" Width="120" Name="txtNom"/>
             <Label Content="Description médicament" HorizontalAlignment="Left" VerticalAlignment="Center" Name="DescriptionMedicament"/>
             <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir une description" VerticalAlignment="Center" Width="120" Name="txtDesc"/>
             <Button Content="Save" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_1" />
-            <Button Content="Update" HorizontalAlignment="Center" VerticalAlignment="Center" Name="update" />
+            <Button Content="Update" HorizontalAlignment="Center" VerticalAlignment="Center" Name="update" Click="update_Click" />
             <Button Content="Charger la liste" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click_2"  />
             <DataGrid ItemsSource="{Binding}"
                       Name="MedicamentList" 
@@ -34,7 +34,7 @@
                     <DataGridTemplateColumn Header="Modifier">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Click="BtnUpdateMedicament"> Modifier</Button>
+                                <Button Click="BtnUpdateMedicament">Modifier</Button>
                             </DataTemplate>
 
                         </DataGridTemplateColumn.CellTemplate>
@@ -50,7 +50,8 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-        
+        <Button Content="Button page 2" HorizontalAlignment="Left" Margin="683,141,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.919,-3.069" Height="63" Width="114" Click="Button_Click"/>
+
 
 
 
