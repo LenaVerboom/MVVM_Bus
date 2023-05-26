@@ -9,10 +9,10 @@
     <Grid>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Click Me" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/>
+           
             <Label Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Name="Message"/>
-            <Label Content="Id" HorizontalAlignment="Left" VerticalAlignment="Center" Name="Id"/>
-            <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir un Id" VerticalAlignment="Center" Width="120" Name="txtId"/>
+            <Label Content="Id" HorizontalAlignment="Left" VerticalAlignment="Center" Name="Id" Visibility="Hidden"/>
+            <TextBox HorizontalAlignment="Left"  TextWrapping="Wrap" Text="Saisir un Id" VerticalAlignment="Center" Width="120" Name="txtId" Visibility="Hidden"/>
 
             <Label Content="Nom médicament" HorizontalAlignment="Left" VerticalAlignment="Center" Name="NomMedicament"/>
                        
@@ -25,7 +25,7 @@
             <DataGrid ItemsSource="{Binding}"
                       Name="MedicamentList" 
                       xmlns:m="http://schemas.microsoft/wpf/2008/toolkit"
-                        AutoGenerateColumns="False" Grid.Row="1" Grid.RowSpan="2" Width="339"
+                        AutoGenerateColumns="False" Grid.Row="1" Grid.RowSpan="2" Width="821"
                       >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding Path=MedocId}"/>
@@ -42,7 +42,7 @@
                     <DataGridTemplateColumn Header="Supprimer">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button>Supprimer</Button>
+                                <Button Click="BtnDeleteMedicament">Supprimer</Button>
                             </DataTemplate>
 
                         </DataGridTemplateColumn.CellTemplate>

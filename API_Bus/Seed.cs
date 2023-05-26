@@ -16,13 +16,28 @@ namespace API_Bus
             var Medicaments = new List<Medicament> {
             new Medicament()
             {
-                Name = "Test",
-                Description = "double test"
+                Name = "ABEVMY 25 mg/mL",
+                Description = "solution à diluer pour perfusion"
             },
             new Medicament()
             {
-                Name = "Test2",
-                Description = "double test2"
+                Name = "ABIES NIGRA BOIRON",
+                Description = "degré de dilution compris entre 2CH à 30CH et 4DH à 60DH"
+            },
+            new Medicament()
+            {
+                Name = "ABILIFY MAINTENA 300 mg",
+                Description = "poudre et solvant pour suspension injectable à libération prolongée"
+            },
+            new Medicament()
+            {
+                Name = "ACAMPROSATE BIOGARAN 333 mg",
+                Description = "comprimé pelliculé gastro-résistant"
+            },
+            new Medicament()
+            {
+                Name = "ACIDE ALENDRONIQUE ALTER 70 mg",
+                Description = "comprimé pelliculé"
             },
             };
 

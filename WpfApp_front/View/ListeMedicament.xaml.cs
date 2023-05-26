@@ -32,18 +32,6 @@ namespace WpfApp_front.View
             InitializeComponent();
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var response = await client.GetAsync("https://localhost:7020/api/Medicament/1");
-            response.EnsureSuccessStatusCode(); 
-            if (response.IsSuccessStatusCode) {
-                Message.Content = await response.Content.ReadAsStringAsync();
-            }
-            else
-            {
-                Message.Content = "Server error";
-            }
-        }
 
 
 
@@ -75,7 +63,7 @@ namespace WpfApp_front.View
                     message = ex.Message;
                 }
 
-                MessageBox.Show(this, message, "Message", MessageBoxButton.OK);
+                MessageBox.Show(this, "Le médicament " + message.Split(",")[1].Split(":")[1].Replace('"', ' ') + " à bien été ajouté" , "Message", MessageBoxButton.OK);
             }
         }
 
@@ -121,9 +109,18 @@ namespace WpfApp_front.View
             Medicament medicament = ((FrameworkElement)sender).DataContext as Medicament;
             txtId.Text = medicament.MedocId.ToString();
             txtNom.Text = medicament.Name;
-            txtDesc.Text = medicament.Description;  
+            txtDesc.Text = medicament.Description;
+            MessageBox.Show(this, "Modifié", "Message", MessageBoxButton.OK);
             this.UpdateMedoc(medicament);
         }
 
+        private void BtnDeleteMedicament(object sender, RoutedEventArgs e)
+        {
+            Medicament medoc = ((FrameworkElement)sender).DataContext as Medicament;
+            this.DeleteMedoc(medoc.MedocId);
+            MessageBox.Show(this, "Supprimé", "Message", MessageBoxButton.OK);
+            this.GetMedicaments();
+
+        }
     }
 }
